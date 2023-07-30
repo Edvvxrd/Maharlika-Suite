@@ -1,0 +1,307 @@
+<section class="booking-section container-fluid">
+    <div class="booking-wrapper container">
+        <div class="card card-head shadow">
+            <div class="card-body">
+                <div class="d-flex align-items-center justify-content-center">
+                    <i class="fa-solid fa-hotel me-3"></i>
+                    <h4>Reservation</h4>
+                </div>
+            </div>
+        </div>
+        <div class="card card-main">
+            <div class="card-header pt-5 pb-3">
+                <div class="row px-5">
+                    <div class="col-3 p-2">
+                        <div class="d-flex justify-content-between">
+                            <label for="customRange3" class="form-label fw-semibold">Price / Night</label>
+                            <span class="text-secondary">₱ 0 - ₱ 2,000</span>
+                        </div>
+                        <input type="range" class="form-range" min="0" max="5" step="0.5" id="customRange3">
+                    </div>
+                    <div class="col-7 p-2">
+                        <div class="row g-0">
+                            <div class="col-5 pe-4">
+                                <label for="date" class="form-label fw-semibold">Guests</label>
+                                <div class="card">
+                                    <div class="card-body p-2">
+                                        <div class="d-flex align-items-center">
+                                            <i class="fa-solid fa-user-group me-1"></i>
+                                            <select class="form-select border-0 py-0">
+                                                <option selected>2 Guests</option>
+                                                <option value="1">One</option>
+                                                <option value="2">Two</option>
+                                                <option value="3">Three</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-7 pe-2">
+                                <label for="date" class="form-label fw-semibold">Duration</label>
+                                <div class="card">
+                                    <div class="card-body p-2">
+                                        <div class="d-flex align-items-center">
+                                            <i class="fa-solid fa-moon me-2"></i>
+                                            <select class="form-select border-0 py-0">
+                                                <option selected>1 Night</option>
+                                                <option value="1">One</option>
+                                                <option value="2">Two</option>
+                                                <option value="3">Three</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-2 p-2">
+                        <label for="select" class="form-label fw-semibold">Guest Rating</label>
+                        <div class="card">
+                            <div class="card-body p-2">
+                                <div class="d-flex align-items-center">
+                                    <i class="fa-solid fa-star"></i>
+                                    <select class="form-select border-0 py-0">
+                                        <option selected>All</option>
+                                        <option value="1">One</option>
+                                        <option value="2">Two</option>
+                                        <option value="3">Three</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row px-5">
+                    <div class="col-5 p-2">
+                        <label for="exampleFormControlInput1" class="form-label fw-semibold">Discount Coupon</label>
+                        <div class="row g-0">
+                            <div class="col-9 pe-2">
+                                <input type="text" class="form-control" id="" placeholder="Promo Code">
+                            </div>
+                            <div class="col-3">
+                                <button class="btn btn-success w-100">Apply</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-5 p-2">
+                        <div class="card h-100 custom-date-select">
+                            <div class="card-body">
+                                <div class="row h-100">
+                                    <div class="col-6 check-in h-100">
+                                        <label for="date" class="form-label fw-semibold m-0">Check in</label>
+                                        <div class="d-flex align-items-center">
+                                            <i class="fa-solid fa-calendar-check"></i>
+                                            <input type="date" class="form-control border-0">
+                                        </div>
+                                    </div>
+                                    <div class="col-6 check-out h-100">
+                                        <label for="date" class="form-label fw-semibold m-0">Check out</label>
+                                        <div class="d-flex align-items-center">
+                                            <i class="fa-solid fa-calendar-check"></i>
+                                            <input type="date" class="form-control border-0">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-2 p-2">
+                        <label for="select" class="form-label fw-semibold">More Filter</label>
+                        <div class="card">
+                            <div class="card-body p-2">
+                                <div class="d-flex align-items-center">
+                                    <select class="form-select border-0 py-0">
+                                        <option selected>Select</option>
+                                        <option value="1">One</option>
+                                        <option value="2">Two</option>
+                                        <option value="3">Three</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body pt-4 pb-5">
+                <div class="row px-5">
+                    <div class="col-12">
+                        <div class="card room-item shadow mb-3" ng-repeat="room in rooms"
+                            ng-click="createReservation(room.type, $event)">
+                            <div class="d-flex h-100">
+                                <div class="card-img-wrapper">
+                                    <img src="/src/img/hero-placeholder.jpg" class="" alt="Room">
+                                </div>
+                                <div class="card-body p-5">
+                                    <div class="row h-100">
+                                        <div class="col-6 d-flex flex-column h-100">
+                                            <div class="row">
+                                                <div class="title">
+                                                    <h5 class="card-title fw-semibold">{{ room.name }}</h5>
+                                                    <i class="fa-regular fa-heart"></i>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="d-flex">
+                                                    <span class="me-2">Rating: </span>
+                                                    <div class="d-flex"><i class="fa-solid fa-star"
+                                                            ng-repeat="x in [].constructor(5) track by $index"
+                                                            ng-class="{'text-warning': $index < room.rating}"></i></div>
+                                                    <span class="ms-2 text-secondary">({{ room.review }} reviews)</span>
+                                                </div>
+                                            </div>
+                                            <div class="row mt-2">
+                                                <div class="d-flex">
+                                                    <span class="btn rounded-pill me-2"
+                                                        ng-repeat="status in room.status"
+                                                        ng-class="{'border-warning text-warning' : $index == 0, 'border-secondary text-secondary' : $index != 0}">
+                                                        {{ status }}
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="row flex-grow-1">
+                                                <div class="col-12 align-self-end">
+                                                    <span>3.5 km from the city</span>
+                                                    <div class="d-flex justify-content-between text-secondary">
+                                                        <span>View room offer details</span>
+                                                        <i class="fa-solid fa-chevron-right"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-6 d-flex flex-column h-100">
+                                            <div class="flex-grow-1 mb-2">
+                                                <div class="card text-bg-success-light border-0 h-100">
+                                                    <div class="card-body">
+                                                        <div class="row h-100">
+                                                            <div class="col-12 align-self-start">
+                                                                <p>Pay as low as</p>
+                                                                <div class="d-flex align-items-center text-success">
+                                                                    <i class="fa-solid fa-circle-check"></i>
+                                                                    <span class="ms-2 fw-semibold">Free
+                                                                        cancellation</span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-12 align-self-end">
+                                                                <div
+                                                                    class="d-flex align-items-end justify-content-between">
+                                                                    <h4 class="fw-semibold text-success">{{room.min |
+                                                                        currency : '₱ '}}</h4>
+                                                                    <button class="btn btn-success">View Deal</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row g-2">
+                                                <div class="col-6">
+                                                    <div class="card text-bg-light border-0">
+                                                        <div class="card-body">
+                                                            <h6 class="card-subtitle text-secondary">12 Hours</h6>
+                                                            <h5 class="fw-semibold">{{room.ave | currency : '₱ '}}</h5>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-6">
+                                                    <div class="card text-bg-light border-0">
+                                                        <div class="card-body">
+                                                            <h6 class="card-subtitle text-secondary">24 Hours</h6>
+                                                            <h5 class="fw-semibold">{{room.max | currency : '₱ '}}</h5>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bg-img-partial"></div>
+</section>
+
+<div class="modal fade" id="detailsModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content modal-form" ng-if="success === false">
+            <form name="form" ng-submit="sendRequest(form)">
+                <div class="modal-header border-0">
+                    <h1 class="modal-title fs-5">Reservation Request</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-12 mb-3">
+                            <label for="" class="form-label">Room Type</label>
+                            <input type="text" class="form-control" name="type" ng-model="user.type" disabled>
+                        </div>
+
+                        <div class="col-12 mb-3">
+                            <label for="" class="form-label">Fullname</label>
+                            <input type="text" class="form-control" name="name" ng-model="user.name"
+                                placeholder="ex: John Doe" required>
+                        </div>
+
+                        <div class="col-12 mb-3">
+                            <label for="" class="form-label">Email address</label>
+                            <div class="input-group">
+                                <span class="input-group-text">@</span>
+                                <input type="email" class="form-control" name="email" ng-model="user.email"
+                                    placeholder="ex: johndoe@mail.com" required>
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <div class="card h-100 custom-date-select">
+                                <div class="card-body">
+                                    <div class="row h-100">
+                                        <div class="col-6 check-in h-100">
+                                            <label for="date" class="form-label fw-semibold m-0">Check in</label>
+                                            <div class="d-flex align-items-center">
+                                                <i class="fa-solid fa-calendar-check"></i>
+                                                <input type="date" class="form-control border-0" name="check_in"
+                                                    ng-model="user.check_in" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-6 check-out h-100">
+                                            <label for="date" class="form-label fw-semibold m-0">Check out</label>
+                                            <div class="d-flex align-items-center">
+                                                <i class="fa-solid fa-calendar-check"></i>
+                                                <input type="date" class="form-control border-0" name="check_out"
+                                                    ng-model="user.check_out" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer border-0">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </form>
+        </div>
+        <div class="modal-content modal-message" ng-if="success === true">
+            <div class="modal-header border-0"></div>
+            <div class="modal-body p-5">
+                <div class="d-flex flex-column justify-content-center">
+                    <i class="fa-solid fa-circle-check text-success"></i>
+                    <h3 class="fw-semibold text-success">Request Sent successfully!</h3>
+                    <p class="text-secondary">
+                        We appreciate your interest. We will reach out to you shortly via email to discuss further details and address any inquiries you may have.
+                    </p>
+                    <div class="btn btn-outline-secondary" data-bs-dismiss="modal">Confirm</div>
+                </div>
+            </div>
+            <div class="modal-footer border-0">
+
+            </div>
+        </div>
+    </div>
+</div>

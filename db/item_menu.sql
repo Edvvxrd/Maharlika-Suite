@@ -1,0 +1,113 @@
+-- phpMyAdmin SQL Dump
+-- version 5.2.0
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: Mar 25, 2023 at 12:21 PM
+-- Server version: 10.4.27-MariaDB
+-- PHP Version: 7.4.33
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `maharlika_db`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `item_menu`
+--
+
+CREATE TABLE `item_menu` (
+  `item_id` int(255) NOT NULL,
+  `item_name` varchar(100) NOT NULL,
+  `item_price` int(5) NOT NULL,
+  `item_category` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `item_menu`
+--
+
+INSERT INTO `item_menu` (`item_id`, `item_name`, `item_price`, `item_category`) VALUES
+(1, 'PINEAPPLE CHUNKS', 85, 'APPETIZER'),
+(2, 'BESUTO', 105, 'APPETIZER'),
+(3, 'FRENCH FRIES', 125, 'APPETIZER'),
+(4, 'PICA-PICA ASSTD BALLS', 165, 'APPETIZER'),
+(5, 'PORK SISIG', 185, 'SIZZLING PLATES'),
+(6, 'CHICKEN SISIG', 165, 'SIZZLING PLATES'),
+(7, 'SIZZLING PUSIT', 165, 'SIZZLING PLATES'),
+(8, 'SIZZLING HOTDOG', 155, 'SIZZLING PLATES'),
+(9, 'BUTTERED CORN', 145, 'SIZZLING PLATES'),
+(10, 'ASSTD. MUSHROOM IN OYSTER SAUCE', 165, 'SIZZLING PLATES'),
+(11, 'ADOBO', 185, 'PORK'),
+(12, 'CHICHARON BULAKLAK', 155, 'PORK'),
+(13, 'CRISPY TENGA', 175, 'PORK'),
+(14, 'PORK BBQ', 175, 'PORK'),
+(15, 'CRAB & CORN', 115, 'SOUP'),
+(16, 'MUSHROOM SOUP', 110, 'SOUP'),
+(17, 'BIHON', 105, 'NOODLES'),
+(18, 'CANTON', 115, 'NOODLES'),
+(19, 'CANTON BIHON', 115, 'NOODLES'),
+(20, 'BOTTLED WATER', 20, 'DRINKS'),
+(21, 'COFFEE/MILO', 20, 'DRINKS'),
+(22, '1.5 COKE/ROYAL/SPRITE', 80, 'DRINKS'),
+(23, 'CAN COKE/ROYAL/SPRITE', 45, 'DRINKS'),
+(24, 'BOTTLE COKE/ROYAL/SPRITE', 20, 'DRINKS'),
+(25, 'PINEAPPLE JUICE', 20, 'DRINKS'),
+(26, 'C2', 20, 'DRINKS'),
+(27, 'FISH FILLET W/ SWEET AND SOUR', 155, 'SEAFOODS'),
+(28, 'CALAMAREZ', 155, 'SEAFOODS'),
+(29, 'HALF FRIED CHICKEN', 195, 'CHICKEN'),
+(30, 'WHOLE FRIED CHICKEN', 330, 'CHICKEN'),
+(31, 'BUTTERED CHICKEN', 155, 'CHICKEN'),
+(32, 'PINK SALMON BELLY', 195, 'SINIGANG'),
+(33, 'SALMON HEAD', 175, 'SINIGANG'),
+(34, 'PORK', 185, 'SINIGANG'),
+(35, 'PLAIN', 15, 'RICE'),
+(36, 'GARLIC', 90, 'RICE'),
+(37, 'EGG RICE', 120, 'RICE'),
+(38, 'GISING-GISING', 175, 'VEGETABLES'),
+(39, 'CHOPSUEY', 175, 'VEGETABLES'),
+(40, 'HOTSILOG', 85, 'SILOG'),
+(41, 'LONGSILOG', 95, 'SILOG'),
+(42, 'TAPSILOG', 95, 'SILOG'),
+(43, 'CHICKSILOG', 95, 'SILOG'),
+(44, 'SAN MIG LIGHT', 60, 'BEERS'),
+(45, 'SAN MIG APPLE', 50, 'BEERS'),
+(46, 'SMG PALE PILSEN', 60, 'BEERS'),
+(47, 'REDHORSE', 90, 'BEERS');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `item_menu`
+--
+ALTER TABLE `item_menu`
+  ADD PRIMARY KEY (`item_id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `item_menu`
+--
+ALTER TABLE `item_menu`
+  MODIFY `item_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
